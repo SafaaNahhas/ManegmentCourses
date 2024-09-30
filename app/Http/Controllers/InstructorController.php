@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Instructor;
 use App\Services\InstructorService;
 use App\Http\Resources\CoursesResource;
 use App\Http\Resources\InstructorResource;
@@ -107,6 +106,7 @@ public function studentsByInstructor($instructor_id)
    $students=$this->instructorService->getStudentsByInstructor($instructor_id);
     return response()->json($students, 200);
 }
+
 }
 
 

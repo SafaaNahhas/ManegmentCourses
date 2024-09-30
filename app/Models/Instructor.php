@@ -35,7 +35,7 @@ class Instructor extends Model
         return $this->belongsToMany(Course::class, 'course_instructor')
             ;
     }
-   
+
      /**
      * The students associated with the instructor through courses.
      *
@@ -52,4 +52,5 @@ class Instructor extends Model
         'course_id'
     );
 }
+
 }

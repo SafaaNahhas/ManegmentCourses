@@ -25,6 +25,7 @@ class CoursesResource extends JsonResource
             'students' => $this->whenLoaded('students', function () {
                 return $this->students->pluck('name');
             }),
+            // 'instructors'   => InstructorResource::collection($this->whenLoaded('instructors')),
 
              'instructors' => $this->whenLoaded('instructors', function () {
                 return $this->instructors->pluck('name');

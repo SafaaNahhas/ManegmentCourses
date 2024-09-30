@@ -21,7 +21,7 @@ class AuthService
      * @param array $credentials The user's email and password.
      * @return array The response containing the authentication token or an error message with the status code.
      */
-   
+
     public function login($credentials)
     {
         if (!$token = Auth::attempt($credentials)) {
@@ -42,6 +42,7 @@ class AuthService
         $user->name = $data['name'];
         $user->email = $data['email'];
         $user->password=Hash::make($data['password']);
+        $user->is_admin = $data['is_admin'];
         $user->save();
         $token = Auth::login($user);
 
